@@ -1,0 +1,11 @@
+#! /bin/bash
+# Turn on or turn off gnome shell activities animations
+if [[ "$1" == "on" ]] || [[ "$1" == "true" ]]; then
+	gsettings reset org.gnome.desktop.interface enable-animations
+	echo "Activities Animations On"
+elif [[ "$1" == "off" ]] || [[ "$1" == "false" ]]; then
+	gsettings set org.gnome.desktop.interface enable-animations false
+	echo "Activities Animations Off"
+else
+	echo "error: Unknown parameter" >&2; exit 1
+fi

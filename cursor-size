@@ -1,0 +1,27 @@
+#! /bin/bash
+re='^[0-9]+$'
+
+get_cursor_size(){
+	gsettings get org.gnome.desktop.interface cursor-size
+}
+
+case $1 in
+
+  "")
+	echo "Cursor size: $(get_cursor_size)"
+    ;;
+
+  reset)
+    gsettings reset org.gnome.desktop.interface cursor-size
+	echo "Cursor size: $(get_cursor_size)(default)"
+    ;;
+
+  *)
+    if ! [[ $1 =~ $re ]] ; then
+		echo "error: Parameter is not a number" >&2; exit 1
+	else
+		gsettings set org.gnome.desktop.interface cursor-size $1
+ 		echo "Cursor size: $(get_cursor_size)"
+	fi
+    ;;
+esac
