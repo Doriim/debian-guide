@@ -107,8 +107,13 @@ To <b style="color: #FFC300"><i> get </i></b> the current cursor size run:
 ```
 bash cursor-size
 ```
-## FFMPEG Converting from mp4 to webm
+## FFMPEG Converting
+1. Install ffmpeg
 
+```
+sudo apt install ffmpeg
+```
+2. Converting from mp4 to webm
 ```
 ffmpeg -i input.mp4 -c:v libvpx-vp9 -crf 30 -b:v 0 -b:a 128k -c:a libopus output.webm
 ```
