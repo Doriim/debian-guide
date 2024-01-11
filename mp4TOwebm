@@ -1,0 +1,6 @@
+#! /bin/bash
+for input in *.mp4; 
+do 
+ffmpeg -i "$i" "${i%.*}.webm";
+ffmpeg -i "input" -c:v libvpx-vp9 -crf 30 -b:v 0 -b:a 128k -c:a libopus "output.webm";
+done

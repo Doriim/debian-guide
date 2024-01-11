@@ -117,3 +117,14 @@ sudo apt install ffmpeg
 ```
 ffmpeg -i input.mp4 -c:v libvpx-vp9 -crf 30 -b:v 0 -b:a 128k -c:a libopus output.webm
 ```
+
+## How to change vscode WHITE title bar
+
+1. Open your vscode
+2. Press Ctrl + Shift + P
+3. Select "Open User Settings(JSON)", hit Enter
+4. Add the following line to the JSON file:
+
+```
+"window.titleBarStyle": "custom"
+```
