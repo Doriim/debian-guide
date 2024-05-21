@@ -128,3 +128,11 @@ ffmpeg -i input.mp4 -c:v libvpx-vp9 -crf 30 -b:v 0 -b:a 128k -c:a libopus output
 ```
 "window.titleBarStyle": "custom"
 ```
+
+## Show installed packages via `apt` or `dpkg` by date
+```
+grep " install " /var/log/dpkg.log | sort -r
+```
+```
+grep " install " /var/log/dpkg.log | sort -r | awk '{print $1, $2, $4}'
+```
